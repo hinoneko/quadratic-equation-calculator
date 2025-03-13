@@ -10,8 +10,5 @@ def file_mode():
         a, b, c = coefficients
         roots = quadratic_calculator(a, b, c)
 
-        if roots:
-            for i, root in enumerate(roots, start=1):
+        for i, root in enumerate(roots, start=1):
                 print(f"x{i} = {root}")
-        else:
-            print("No real roots found.")

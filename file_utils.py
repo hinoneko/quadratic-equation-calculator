@@ -19,7 +19,7 @@ def read_coefficients_from_file(file_path):
             return a, b, c
 
     except FileNotFoundError:
-        print(f"Error: File '{file_path}' does not exist.")
+        print(f"File '{file_path}' does not exist.")
         sys.exit(1)
 
     except ValueError as e:
