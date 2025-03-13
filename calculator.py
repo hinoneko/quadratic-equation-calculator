@@ -1,10 +1,9 @@
 import math
 
 
-def solve_quadratic(a, b, c):
-
+def quadratic_calculator(a, b, c):
     if a == 0:
-        raise ValueError("Coefficient 'a' cannot be 0 (not a quadratic equation).")
+        raise ValueError("Coefficient 'a' cannot be 0.")
 
     discriminant = b ** 2 - 4 * a * c
 
