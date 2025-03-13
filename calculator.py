@@ -1,7 +1,7 @@
 import math
 
 
-def quadratic_calculator(a, b, c):
+def solve_quadratic(a, b, c):
 
     if a == 0:
         raise ValueError("Coefficient 'a' cannot be 0 (not a quadratic equation).")
@@ -22,21 +22,3 @@ def quadratic_calculator(a, b, c):
     else:
         print("There are 0 roots")
         return []
-
-
-if __name__ == "__main__":
-    examples = [
-        (2, 1, -3),
-        (2, 4, 2),
-        (1, 0, 9),
-        (0, 1, 0),
-    ]
-
-    for a, b, c in examples:
-        print("\n" + "="*30)
-        try:
-            roots = quadratic_calculator(a, b, c)
-            for i, root in enumerate(roots):
-                print(f"x{i+1} = {root}")
-        except ValueError as e:
-            print(f"Error: {e}")
