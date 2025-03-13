@@ -37,11 +37,3 @@ def file_mode(file_path):
     if roots:
         for i, root in enumerate(roots):
             print(f"x{i + 1} = {root}")
-
-
-if __name__ == "__main__":
-    if len(sys.argv) == 2:
-        file_path = sys.argv[1]
-        file_mode(file_path)
-    else:
-        print("Usage: python equation.py <file_path>")

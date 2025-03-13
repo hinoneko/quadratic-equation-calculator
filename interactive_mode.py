@@ -29,7 +29,3 @@ def interactive_mode():
             print(f"x{i + 1} = {root}")
     else:
         print("No real roots found.")
-
-
-if __name__ == "__main__":
-    interactive_mode()
