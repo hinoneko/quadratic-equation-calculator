@@ -1,32 +1,5 @@
-import sys
+from file_utils import read_coefficients_from_file
 from calculator import quadratic_calculator
-
-
-def read_coefficients_from_file(file_path):
-    try:
-        with open(file_path, "r") as file:
-            content = file.read().strip()
-
-            coefficients = content.split()
-
-            if len(coefficients) != 3:
-                print("Invalid file format")
-                sys.exit(1)
-
-            a, b, c = map(float, coefficients)
-
-            if a == 0:
-                print("Coefficient 'a' cannot be 0.")
-                sys.exit(1)
-
-            return a, b, c
-
-    except FileNotFoundError:
-        print(f"File {file_path} does not exist")
-        sys.exit(1)
-    except ValueError:
-        print("Invalid file format")
-        sys.exit(1)
 
 
 def file_mode(file_path):
@@ -34,6 +7,10 @@ def file_mode(file_path):
 
     roots = quadratic_calculator(a, b, c)
 
+    print(f"Equation: ({a})x² + ({b})x + ({c}) = 0")
     if roots:
-        for i, root in enumerate(roots):
-            print(f"x{i + 1} = {root}")
+        print(f"There are {len(roots)} root(s).")
+        for i, root in enumerate(roots, start=1):
+            print(f"x{i} = {root}")
+    else:
+        print("No real roots found.")

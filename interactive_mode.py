@@ -1,17 +1,5 @@
+from input_utils import get_coefficient
 from calculator import quadratic_calculator
-
-
-def get_coefficient(name):
-    while True:
-        value = input(f"{name} = ")
-        try:
-            value = float(value)
-            if name == "a" and value == 0:
-                print("Coefficient 'a' cannot be 0.")
-                continue
-            return value
-        except ValueError:
-            print(f"Expected a valid real number, got {value} instead")
 
 
 def interactive_mode():
@@ -25,7 +13,9 @@ def interactive_mode():
     roots = quadratic_calculator(a, b, c)
 
     if roots:
-        for i, root in enumerate(roots):
-            print(f"x{i + 1} = {root}")
+        print(f"Equation: ({a})x² + ({b})x + ({c}) = 0")
+        print(f"There are {len(roots)} root(s).")
+        for i, root in enumerate(roots, start=1):
+            print(f"x{i} = {root}")
     else:
         print("No real roots found.")
