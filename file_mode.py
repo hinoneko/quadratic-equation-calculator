@@ -2,15 +2,16 @@ from file_utils import read_coefficients_from_file
 from calculator import quadratic_calculator
 
 
-def file_mode(file_path):
-    a, b, c = read_coefficients_from_file(file_path)
+def file_mode():
+    file_path = input("Enter the path to the file with coefficients: ")
+    coefficients = read_coefficients_from_file(file_path)
 
-    roots = quadratic_calculator(a, b, c)
+    if coefficients:
+        a, b, c = coefficients
+        roots = quadratic_calculator(a, b, c)
 
-    print(f"Equation: ({a})x² + ({b})x + ({c}) = 0")
-    if roots:
-        print(f"There are {len(roots)} root(s).")
-        for i, root in enumerate(roots, start=1):
-            print(f"x{i} = {root}")
-    else:
-        print("No real roots found.")
+        if roots:
+            for i, root in enumerate(roots, start=1):
+                print(f"x{i} = {root}")
+        else:
+            print("No real roots found.")
